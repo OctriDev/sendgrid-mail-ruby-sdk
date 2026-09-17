@@ -5,102 +5,100 @@
 
 # mail_send domain models
 module OctriSendGridMail
-# Defines the ContentEncoding SDK namespace.
-module ContentEncoding
-  GZIP = "gzip"
-  VALUES = ["gzip"].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Defines the Disposition SDK namespace.
-module Disposition
-  INLINE = "inline"
-  ATTACHMENT = "attachment"
-  VALUES = ["inline", "attachment"].freeze
-  def self.from_value(value)
-    value
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalMailFromMetadata
-  FIELDS = {
-    email: "email",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    email
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for MailFrom.
-# Typed representation of the `MailFrom` API schema.
-class MailFrom
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalMailFromMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalMailFromMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalMailFromMetadata::DECODERS
-
-  # @return [String] The email address from which messages are sent. This address should be a verified sender in your Twilio SendGrid account. Email addresses specified in `personalizations` will override addresses set at the message level outside of the `personalizations` object.
-  attr_reader :email
-  # @return [String] A name or title associated with the email address such as "Support" or "Alex".
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Defines the ContentEncoding SDK namespace.
+  module ContentEncoding
+    GZIP = 'gzip'
+    VALUES = ['gzip'].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # Defines the Disposition SDK namespace.
+  module Disposition
+    INLINE = 'inline'
+    ATTACHMENT = 'attachment'
+    VALUES = %w[inline attachment].freeze
+    def self.from_value(value)
+      value
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
-  end
-end
-
-# Internal model hydration metadata.
-class SdkInternalMailToMetadata
-  FIELDS = {
-    email: "email",
-    name: "name",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-    email
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for MailTo.
-# Typed representation of the `MailTo` API schema.
-class MailTo
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalMailToMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalMailToMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalMailToMetadata::DECODERS
-
-  # @return [String] An email address to which a message is sent. Email addresses specified in `personalizations` will override addresses set at the message level outside of the `personalizations` object.
-  attr_reader :email
-  # @return [String] A name or title associated with the email address such as "Alex".
-  attr_reader :name
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalMailFromMetadata
+    FIELDS = {
+      email: 'email',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      email
+    ].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+  # API model for MailFrom.
+  # Typed representation of the `MailFrom` API schema.
+  class MailFrom
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalMailFromMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalMailFromMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalMailFromMetadata::DECODERS
+
+    # @return [String] The email address from which messages are sent. This address should be a verified sender in your Twilio SendGrid account. Email addresses specified in `personalizations` will override addresses set at the message level outside of the `personalizations` object.
+    attr_reader :email
+    # @return [String] A name or title associated with the email address such as "Support" or "Alex".
+    attr_reader :name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+  # Internal model hydration metadata.
+  class SdkInternalMailToMetadata
+    FIELDS = {
+      email: 'email',
+      name: 'name'
+    }.freeze
+    REQUIRED_FIELDS = %i[
+      email
+    ].freeze
+    DECODERS = {}.freeze
   end
-end
+
+  # API model for MailTo.
+  # Typed representation of the `MailTo` API schema.
+  class MailTo
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalMailToMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalMailToMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalMailToMetadata::DECODERS
+
+    # @return [String] An email address to which a message is sent. Email addresses specified in `personalizations` will override addresses set at the message level outside of the `personalizations` object.
+    attr_reader :email
+    # @return [String] A name or title associated with the email address such as "Alex".
+    attr_reader :name
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
+  end
 end

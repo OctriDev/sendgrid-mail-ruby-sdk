@@ -12,14 +12,13 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaAsmMetadata
         FIELDS = {
-          group_id: "group_id",
-          groups_to_display: "groups_to_display",
+          group_id: 'group_id',
+          groups_to_display: 'groups_to_display'
         }.freeze
         REQUIRED_FIELDS = %i[
           group_id
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaAsm.
@@ -52,12 +51,10 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaMailSettingsBypassListManagementMetadata
         FIELDS = {
-          enable: "enable",
+          enable: 'enable'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaMailSettingsBypassListManagement.
@@ -88,12 +85,10 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaMailSettingsBypassSpamManagementMetadata
         FIELDS = {
-          enable: "enable",
+          enable: 'enable'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaMailSettingsBypassSpamManagement.
@@ -124,12 +119,10 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaMailSettingsBypassBounceManagementMetadata
         FIELDS = {
-          enable: "enable",
+          enable: 'enable'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaMailSettingsBypassBounceManagement.
@@ -160,12 +153,10 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaMailSettingsBypassUnsubscribeManagementMetadata
         FIELDS = {
-          enable: "enable",
+          enable: 'enable'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaMailSettingsBypassUnsubscribeManagement.
@@ -196,14 +187,12 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaMailSettingsFooterMetadata
         FIELDS = {
-          enable: "enable",
-          text: "text",
-          html: "html",
+          enable: 'enable',
+          text: 'text',
+          html: 'html'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaMailSettingsFooter.
@@ -238,12 +227,10 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaMailSettingsSandboxModeMetadata
         FIELDS = {
-          enable: "enable",
+          enable: 'enable'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaMailSettingsSandboxMode.
@@ -274,15 +261,14 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaMailSettingsMetadata
         FIELDS = {
-          bypass_list_management: "bypass_list_management",
-          bypass_spam_management: "bypass_spam_management",
-          bypass_bounce_management: "bypass_bounce_management",
-          bypass_unsubscribe_management: "bypass_unsubscribe_management",
-          footer: "footer",
-          sandbox_mode: "sandbox_mode",
+          bypass_list_management: 'bypass_list_management',
+          bypass_spam_management: 'bypass_spam_management',
+          bypass_bounce_management: 'bypass_bounce_management',
+          bypass_unsubscribe_management: 'bypass_unsubscribe_management',
+          footer: 'footer',
+          sandbox_mode: 'sandbox_mode'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           bypass_list_management: lambda do |value|
             ::OctriSendGridMail::Methods::MailSend::SchemaSchemaMailSettingsBypassListManagement.from_hash(value)
@@ -301,7 +287,7 @@ module OctriSendGridMail
           end,
           sandbox_mode: lambda do |value|
             ::OctriSendGridMail::Methods::MailSend::SchemaSchemaMailSettingsSandboxMode.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -343,13 +329,11 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaTrackingSettingsClickTrackingMetadata
         FIELDS = {
-          enable: "enable",
-          enable_text: "enable_text",
+          enable: 'enable',
+          enable_text: 'enable_text'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaTrackingSettingsClickTracking.
@@ -382,13 +366,11 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaTrackingSettingsOpenTrackingMetadata
         FIELDS = {
-          enable: "enable",
-          substitution_tag: "substitution_tag",
+          enable: 'enable',
+          substitution_tag: 'substitution_tag'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaTrackingSettingsOpenTracking.
@@ -421,15 +403,13 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaTrackingSettingsSubscriptionTrackingMetadata
         FIELDS = {
-          enable: "enable",
-          text: "text",
-          html: "html",
-          substitution_tag: "substitution_tag",
+          enable: 'enable',
+          text: 'text',
+          html: 'html',
+          substitution_tag: 'substitution_tag'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaTrackingSettingsSubscriptionTracking.
@@ -466,17 +446,15 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaTrackingSettingsGanalyticsMetadata
         FIELDS = {
-          enable: "enable",
-          utm_source: "utm_source",
-          utm_medium: "utm_medium",
-          utm_term: "utm_term",
-          utm_content: "utm_content",
-          utm_campaign: "utm_campaign",
+          enable: 'enable',
+          utm_source: 'utm_source',
+          utm_medium: 'utm_medium',
+          utm_term: 'utm_term',
+          utm_content: 'utm_content',
+          utm_campaign: 'utm_campaign'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
-        DECODERS = {
-        }.freeze
+        REQUIRED_FIELDS = %i[].freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaTrackingSettingsGanalytics.
@@ -517,13 +495,12 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaTrackingSettingsMetadata
         FIELDS = {
-          click_tracking: "click_tracking",
-          open_tracking: "open_tracking",
-          subscription_tracking: "subscription_tracking",
-          ganalytics: "ganalytics",
+          click_tracking: 'click_tracking',
+          open_tracking: 'open_tracking',
+          subscription_tracking: 'subscription_tracking',
+          ganalytics: 'ganalytics'
         }.freeze
-        REQUIRED_FIELDS = %i[
-        ].freeze
+        REQUIRED_FIELDS = %i[].freeze
         DECODERS = {
           click_tracking: lambda do |value|
             ::OctriSendGridMail::Methods::MailSend::SchemaSchemaTrackingSettingsClickTracking.from_hash(value)
@@ -536,7 +513,7 @@ module OctriSendGridMail
           end,
           ganalytics: lambda do |value|
             ::OctriSendGridMail::Methods::MailSend::SchemaSchemaTrackingSettingsGanalytics.from_hash(value)
-          end,
+          end
         }.freeze
       end
     end

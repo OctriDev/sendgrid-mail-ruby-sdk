@@ -20,17 +20,16 @@ module OctriSendGridMail
         config:,
         on_behalf_of: NOT_GIVEN
       )
-
         SdkClient.request(
           'POST',
-          "/v3/mail/batch",
+          '/v3/mail/batch',
           config: config,
           return_type: MailBatchResponse,
           decoder: :json,
           operation_id: 'create_mail_batch',
           extra_headers: SdkClient.serialize_headers({
-            'on-behalf-of' => on_behalf_of,
-          }),
+                                                       'on-behalf-of' => on_behalf_of
+                                                     })
         ).data
       end
 
@@ -43,16 +42,11 @@ module OctriSendGridMail
       #   to automate bulk updates or to administer a Subuser without changing the
       #   authentication in your code. You will use the parent account's API key when
       #   using this header.
-      singleton_class.define_method(:get_mail_batch) do |
-        config:,
-        batch_id:,
-        on_behalf_of: NOT_GIVEN
-      |
-
+      singleton_class.define_method(:get_mail_batch) do |config:, batch_id:, on_behalf_of: NOT_GIVEN|
         SdkClient.request(
           'GET',
           [
-            "/v3/mail/batch/",
+            '/v3/mail/batch/',
             SdkClient.encode_path_segment(batch_id)
           ].join,
           config: config,
@@ -60,8 +54,8 @@ module OctriSendGridMail
           decoder: :json,
           operation_id: 'get_mail_batch',
           extra_headers: SdkClient.serialize_headers({
-            'on-behalf-of' => on_behalf_of,
-          }),
+                                                       'on-behalf-of' => on_behalf_of
+                                                     })
         ).data
       end
     end

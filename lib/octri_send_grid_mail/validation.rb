@@ -19,32 +19,32 @@ module OctriSendGridMail
       n = value.length
       if min && n < min
         raise SdkValidationError.new(field, 'length',
-          "Validation failed for '#{field}': length must be >= #{min}")
+                                     "Validation failed for '#{field}': length must be >= #{min}")
       end
-      if max && n > max
-        raise SdkValidationError.new(field, 'length',
-          "Validation failed for '#{field}': length must be <= #{max}")
-      end
+      return unless max && n > max
+
+      raise SdkValidationError.new(field, 'length',
+                                   "Validation failed for '#{field}': length must be <= #{max}")
     end
 
     def self.validate_items(field, value, min: nil, max: nil)
       n = value.length
       if min && n < min
         raise SdkValidationError.new(field, 'items',
-          "Validation failed for '#{field}': must have at least #{min} items")
+                                     "Validation failed for '#{field}': must have at least #{min} items")
       end
-      if max && n > max
-        raise SdkValidationError.new(field, 'items',
-          "Validation failed for '#{field}': must have at most #{max} items")
-      end
+      return unless max && n > max
+
+      raise SdkValidationError.new(field, 'items',
+                                   "Validation failed for '#{field}': must have at most #{max} items")
     end
 
-    EMAIL_RE = /\A[^\s@]+@[^\s@]+\.[^\s@]+\z/.freeze
+    EMAIL_RE = /\A[^\s@]+@[^\s@]+\.[^\s@]+\z/
     def self.validate_email(field, value)
       return if value =~ EMAIL_RE
-      raise SdkValidationError.new(field, 'format:email',
-        "Validation failed for '#{field}': must be a valid email address")
-    end
 
+      raise SdkValidationError.new(field, 'format:email',
+                                   "Validation failed for '#{field}': must be a valid email address")
+    end
   end
 end

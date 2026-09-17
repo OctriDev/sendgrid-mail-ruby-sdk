@@ -43,16 +43,16 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaPersonalizationsItemMetadata
         FIELDS = {
-          from: "from",
-          to: "to",
-          cc: "cc",
-          bcc: "bcc",
-          subject: "subject",
-          headers: "headers",
-          substitutions: "substitutions",
-          dynamic_template_data: "dynamic_template_data",
-          custom_args: "custom_args",
-          send_at: "send_at",
+          from: 'from',
+          to: 'to',
+          cc: 'cc',
+          bcc: 'bcc',
+          subject: 'subject',
+          headers: 'headers',
+          substitutions: 'substitutions',
+          dynamic_template_data: 'dynamic_template_data',
+          custom_args: 'custom_args',
+          send_at: 'send_at'
         }.freeze
         REQUIRED_FIELDS = %i[
           to
@@ -69,7 +69,7 @@ module OctriSendGridMail
           end,
           bcc: lambda do |value|
             value&.map { |item| ::OctriSendGridMail::MailTo.from_hash(item) }
-          end,
+          end
         }.freeze
       end
 
@@ -117,15 +117,14 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaContentItemMetadata
         FIELDS = {
-          type: "type",
-          value: "value",
+          type: 'type',
+          value: 'value'
         }.freeze
         REQUIRED_FIELDS = %i[
           type
           value
         ].freeze
-        DECODERS = {
-        }.freeze
+        DECODERS = {}.freeze
       end
 
       # API model for SchemaSchemaContentItem.
@@ -157,11 +156,11 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaAttachmentsItemMetadata
         FIELDS = {
-          content: "content",
-          type: "type",
-          filename: "filename",
-          disposition: "disposition",
-          content_id: "content_id",
+          content: 'content',
+          type: 'type',
+          filename: 'filename',
+          disposition: 'disposition',
+          content_id: 'content_id'
         }.freeze
         REQUIRED_FIELDS = %i[
           content
@@ -170,7 +169,7 @@ module OctriSendGridMail
         DECODERS = {
           disposition: lambda do |value|
             ::OctriSendGridMail::Disposition.from_value(value)
-          end,
+          end
         }.freeze
       end
 
@@ -209,23 +208,23 @@ module OctriSendGridMail
       # Internal model hydration metadata.
       class SdkInternalSchemaSchemaMetadata
         FIELDS = {
-          personalizations: "personalizations",
-          from: "from",
-          reply_to: "reply_to",
-          reply_to_list: "reply_to_list",
-          subject: "subject",
-          content: "content",
-          attachments: "attachments",
-          template_id: "template_id",
-          headers: "headers",
-          categories: "categories",
-          custom_args: "custom_args",
-          send_at: "send_at",
-          batch_id: "batch_id",
-          asm: "asm",
-          ip_pool_name: "ip_pool_name",
-          mail_settings: "mail_settings",
-          tracking_settings: "tracking_settings",
+          personalizations: 'personalizations',
+          from: 'from',
+          reply_to: 'reply_to',
+          reply_to_list: 'reply_to_list',
+          subject: 'subject',
+          content: 'content',
+          attachments: 'attachments',
+          template_id: 'template_id',
+          headers: 'headers',
+          categories: 'categories',
+          custom_args: 'custom_args',
+          send_at: 'send_at',
+          batch_id: 'batch_id',
+          asm: 'asm',
+          ip_pool_name: 'ip_pool_name',
+          mail_settings: 'mail_settings',
+          tracking_settings: 'tracking_settings'
         }.freeze
         REQUIRED_FIELDS = %i[
           personalizations
@@ -258,7 +257,7 @@ module OctriSendGridMail
           end,
           tracking_settings: lambda do |value|
             ::OctriSendGridMail::Methods::MailSend::SchemaSchemaTrackingSettings.from_hash(value)
-          end,
+          end
         }.freeze
       end
 
@@ -420,7 +419,6 @@ module OctriSendGridMail
         mail_settings: NOT_GIVEN,
         tracking_settings: NOT_GIVEN
       )
-
         Validation.validate_items('personalizations', personalizations, max: 1000)
 
         Validation.if_given(reply_to_list) do
@@ -437,7 +435,7 @@ module OctriSendGridMail
 
         SdkClient.request(
           'POST',
-          "/v3/mail/send",
+          '/v3/mail/send',
           config: config,
           body: {
             'personalizations' => personalizations,
@@ -456,13 +454,13 @@ module OctriSendGridMail
             'asm' => asm,
             'ip_pool_name' => ip_pool_name,
             'mail_settings' => mail_settings,
-            'tracking_settings' => tracking_settings,
+            'tracking_settings' => tracking_settings
           },
           decoder: :empty,
           operation_id: 'send_mail',
           extra_headers: SdkClient.serialize_headers({
-            'Content-Encoding' => content_encoding,
-          }),
+                                                       'Content-Encoding' => content_encoding
+                                                     })
         ).data
       end
     end

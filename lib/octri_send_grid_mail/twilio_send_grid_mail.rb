@@ -35,7 +35,6 @@ module OctriSendGridMail
     )
       OctriSendGridMail::Methods::MailBatch.get_mail_batch(config: @config, batch_id: batch_id, on_behalf_of: on_behalf_of)
     end
-
   end
 
   # Defines the MailSendNamespace SDK type.
@@ -69,7 +68,6 @@ module OctriSendGridMail
     )
       OctriSendGridMail::Methods::MailSend.send_mail(config: @config, personalizations: personalizations, from: from, content_encoding: content_encoding, reply_to: reply_to, reply_to_list: reply_to_list, subject: subject, content: content, attachments: attachments, template_id: template_id, headers: headers, categories: categories, custom_args: custom_args, send_at: send_at, batch_id: batch_id, asm: asm, ip_pool_name: ip_pool_name, mail_settings: mail_settings, tracking_settings: tracking_settings)
     end
-
   end
 
   # Defines the TwilioSendGridMail SDK type.
@@ -99,6 +97,5 @@ module OctriSendGridMail
       end
       logging
     end
-
   end
 end

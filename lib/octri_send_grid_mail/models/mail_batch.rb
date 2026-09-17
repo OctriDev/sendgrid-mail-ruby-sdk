@@ -5,39 +5,37 @@
 
 # mail_batch domain models
 module OctriSendGridMail
-# Internal model hydration metadata.
-class SdkInternalMailBatchResponseMetadata
-  FIELDS = {
-    batch_id: "batch_id",
-  }.freeze
-  REQUIRED_FIELDS = %i[
-  ].freeze
-  DECODERS = {
-  }.freeze
-end
-
-# API model for MailBatchResponse.
-# Typed representation of the `MailBatchResponse` API schema.
-class MailBatchResponse
-  CONSTRUCTION_SURFACE = :named
-  FIELDS = SdkInternalMailBatchResponseMetadata::FIELDS
-  REQUIRED_FIELDS = SdkInternalMailBatchResponseMetadata::REQUIRED_FIELDS
-  DECODERS = SdkInternalMailBatchResponseMetadata::DECODERS
-
-  # @return [String] A mail batch ID.
-  attr_reader :batch_id
-
-  def initialize(**attributes)
-    SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
-    freeze
+  # Internal model hydration metadata.
+  class SdkInternalMailBatchResponseMetadata
+    FIELDS = {
+      batch_id: 'batch_id'
+    }.freeze
+    REQUIRED_FIELDS = %i[].freeze
+    DECODERS = {}.freeze
   end
 
-  def self.from_hash(data)
-    SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
-  end
+  # API model for MailBatchResponse.
+  # Typed representation of the `MailBatchResponse` API schema.
+  class MailBatchResponse
+    CONSTRUCTION_SURFACE = :named
+    FIELDS = SdkInternalMailBatchResponseMetadata::FIELDS
+    REQUIRED_FIELDS = SdkInternalMailBatchResponseMetadata::REQUIRED_FIELDS
+    DECODERS = SdkInternalMailBatchResponseMetadata::DECODERS
 
-  def to_h
-    SdkModel.to_h(self, FIELDS)
+    # @return [String] A mail batch ID.
+    attr_reader :batch_id
+
+    def initialize(**attributes)
+      SdkModel.assign(self, attributes, FIELDS, REQUIRED_FIELDS)
+      freeze
+    end
+
+    def self.from_hash(data)
+      SdkModel.from_hash(self, data, FIELDS, REQUIRED_FIELDS, DECODERS)
+    end
+
+    def to_h
+      SdkModel.to_h(self, FIELDS)
+    end
   end
-end
 end
