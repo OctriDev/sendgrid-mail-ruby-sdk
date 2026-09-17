@@ -1,0 +1,1331 @@
+{
+  "schemaTitle": "Twilio SendGrid Mail API",
+  "schemaVersion": "1.0.0",
+  "language": "ruby",
+  "enumStrategy": "open",
+  "unitTests": "include",
+  "operations": [
+    {
+      "id": "createMailBatch",
+      "wireOperationId": "CreateMailBatch",
+      "method": "post",
+      "path": "/v3/mail/batch",
+      "namespace": [
+        "mailBatch"
+      ],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "CreateMailBatch"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "201",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/MailBatchResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "MailBatchResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "401",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "403",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "405",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "500",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        }
+      ],
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "in": "header",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "on-behalf-of",
+          "in": "header",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "getMailBatch",
+      "wireOperationId": "GetMailBatch",
+      "method": "get",
+      "path": "/v3/mail/batch/{batch_id}",
+      "namespace": [
+        "mailBatch"
+      ],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": null,
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "GetMailBatch"
+        }
+      ],
+      "requestModes": [],
+      "responseModes": [
+        {
+          "statusCode": "200",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/MailBatchResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "MailBatchResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "401",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "403",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "405",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "500",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        }
+      ],
+      "params": [
+        {
+          "name": "batch_id",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "on-behalf-of",
+          "in": "header",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "style": "simple",
+          "explode": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "batch_id",
+          "in": "path",
+          "required": true,
+          "nullable": false,
+          "type": "string",
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "on-behalf-of",
+          "in": "header",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "style": "simple",
+          "explode": false
+        }
+      ]
+    },
+    {
+      "id": "sendMail",
+      "wireOperationId": "SendMail",
+      "method": "post",
+      "path": "/v3/mail/send",
+      "namespace": [
+        "mailSend"
+      ],
+      "streams": false,
+      "mode": "normal",
+      "streamSelector": null,
+      "requestMediaType": "application/json",
+      "publicMethods": [
+        {
+          "mode": "normal",
+          "name": "SendMail"
+        }
+      ],
+      "requestModes": [
+        {
+          "mediaType": "application/json",
+          "encoderKind": "json",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "bodyShape": "fields",
+          "fields": [
+            {
+              "name": "personalizations",
+              "required": true,
+              "repeated": true,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "from",
+              "required": true,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "reply_to",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "reply_to_list",
+              "required": false,
+              "repeated": true,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "subject",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "content",
+              "required": false,
+              "repeated": true,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "attachments",
+              "required": false,
+              "repeated": true,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "template_id",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "headers",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "categories",
+              "required": false,
+              "repeated": true,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "custom_args",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "send_at",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "batch_id",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "asm",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "ip_pool_name",
+              "required": false,
+              "repeated": false,
+              "partKind": "scalar",
+              "contentType": null
+            },
+            {
+              "name": "mail_settings",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            },
+            {
+              "name": "tracking_settings",
+              "required": false,
+              "repeated": false,
+              "partKind": "json",
+              "contentType": null
+            }
+          ]
+        }
+      ],
+      "responseModes": [
+        {
+          "statusCode": "202",
+          "mediaType": null,
+          "decoderKind": "empty",
+          "schemaRef": null,
+          "schemaType": {
+            "type": "any",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null
+          },
+          "hasAuthoredExample": false,
+          "authoredExampleSource": "none"
+        }
+      ],
+      "errorResponseModes": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "401",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "403",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "405",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "413",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        },
+        {
+          "statusCode": "500",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "schemaRef": "#/components/schemas/ErrorResponse",
+          "schemaType": {
+            "type": "ref",
+            "format": null,
+            "ref": "ErrorResponse",
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "hasAuthoredExample": true,
+          "authoredExampleSource": "media-examples"
+        }
+      ],
+      "params": [
+        {
+          "name": "asm",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "attachments",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "batch_id",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "categories",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "content",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "Content-Encoding",
+          "in": "header",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "custom_args",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "MailFrom",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "headers",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "ip_pool_name",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "mail_settings",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "personalizations",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "reply_to",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "MailTo",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "reply_to_list",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "send_at",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "integer",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "subject",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "template_id",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "tracking_settings",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "mediaTypes": [
+            "application/json"
+          ]
+        }
+      ],
+      "bindings": [
+        {
+          "name": "personalizations",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "body",
+          "required": true,
+          "nullable": false,
+          "type": "MailFrom",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "Content-Encoding",
+          "in": "header",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "style": "simple",
+          "explode": false
+        },
+        {
+          "name": "reply_to",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "MailTo",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "reply_to_list",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "subject",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "content",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "attachments",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "template_id",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "headers",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "categories",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "array",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "custom_args",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "send_at",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "integer",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "batch_id",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "asm",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "ip_pool_name",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "string",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "mail_settings",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "mediaTypes": [
+            "application/json"
+          ]
+        },
+        {
+          "name": "tracking_settings",
+          "in": "body",
+          "required": false,
+          "nullable": false,
+          "type": "object",
+          "mediaTypes": [
+            "application/json"
+          ]
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "name": "ContentEncoding",
+      "kind": "enum",
+      "values": [
+        "gzip"
+      ],
+      "type": {
+        "type": "string",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": []
+    },
+    {
+      "name": "Disposition",
+      "kind": "enum",
+      "values": [
+        "inline",
+        "attachment"
+      ],
+      "type": {
+        "type": "string",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": []
+    },
+    {
+      "name": "ErrorResponse",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "errors",
+          "required": false,
+          "type": "array",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": {
+            "type": "object",
+            "format": null,
+            "ref": null,
+            "nullable": false,
+            "items": null,
+            "mapValue": null,
+            "variants": null
+          },
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "id",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "MailBatchResponse",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "batch_id",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "MailFrom",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "email",
+          "required": true,
+          "type": "string",
+          "format": "email",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "name",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    },
+    {
+      "name": "MailTo",
+      "kind": "object",
+      "type": {
+        "type": "object",
+        "format": null,
+        "ref": null,
+        "nullable": false,
+        "items": null,
+        "mapValue": null,
+        "variants": null
+      },
+      "properties": [
+        {
+          "name": "email",
+          "required": true,
+          "type": "string",
+          "format": "email",
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        },
+        {
+          "name": "name",
+          "required": false,
+          "type": "string",
+          "format": null,
+          "ref": null,
+          "nullable": false,
+          "items": null,
+          "mapValue": null,
+          "variants": null
+        }
+      ],
+      "values": []
+    }
+  ],
+  "documentation": {
+    "depth": "full",
+    "operations": [
+      {
+        "id": "CreateMailBatch",
+        "method": "post",
+        "path": "/v3/mail/batch",
+        "summary": "**This operation allows you to generate a new mail batch ID.** Once a batch ID is created, you can associate it with a mail send by passing it in the request body of the [Mail Send operation](https://docs.sendgrid.com/api-reference/mail-send/mail-send). This makes it possible to group multiple requests to the Mail Send operation by assigning them the same batch ID. A batch ID that's associated with a mail send can be used to access and modify the associated send. For example, you can pause or cancel a send using its batch ID. See the [Scheduled Sends API](https://www.twilio.com/docs/sendgrid/api-reference/cancel-scheduled-sends) for more information about pausing and cancelling a mail send.",
+        "description": "**This operation allows you to generate a new mail batch ID.** Once a batch ID is created, you can associate it with a mail send by passing it in the request body of the [Mail Send operation](https://docs.sendgrid.com/api-reference/mail-send/mail-send). This makes it possible to group multiple requests to the Mail Send operation by assigning them the same batch ID. A batch ID that's associated with a mail send can be used to access and modify the associated send. For example, you can pause or cancel a send using its batch ID. See the [Scheduled Sends API](https://www.twilio.com/docs/sendgrid/api-reference/cancel-scheduled-sends) for more information about pausing and cancelling a mail send.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "on-behalf-of",
+            "in": "header",
+            "required": false,
+            "description": "Use the `on-behalf-of` header to make API calls for a particular Subuser through the parent account. You can use this header to automate bulk updates or to administer a Subuser without changing the authentication in your code. You will use the parent account's API key when using this header."
+          }
+        ]
+      },
+      {
+        "id": "GetMailBatch",
+        "method": "get",
+        "path": "/v3/mail/batch/{batch_id}",
+        "summary": "**This operation allows you to validate a mail batch ID.** If you provide a valid batch ID, this operation will return a `200` status code and the batch ID itself. If you provide an invalid batch ID, you will receive a `400` level status code and an error message. A batch ID does not need to be assigned to a send to be considered valid. A successful response means only that the batch ID has been created, but it does not indicate that the ID has been assigned to a send.",
+        "description": "**This operation allows you to validate a mail batch ID.** If you provide a valid batch ID, this operation will return a `200` status code and the batch ID itself. If you provide an invalid batch ID, you will receive a `400` level status code and an error message. A batch ID does not need to be assigned to a send to be considered valid. A successful response means only that the batch ID has been created, but it does not indicate that the ID has been assigned to a send.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "batch_id",
+            "in": "path",
+            "required": true,
+            "description": "Set this parameter to the batch ID that's associated with the mail send you want to retrieve."
+          },
+          {
+            "name": "on-behalf-of",
+            "in": "header",
+            "required": false,
+            "description": "Use the `on-behalf-of` header to make API calls for a particular Subuser through the parent account. You can use this header to automate bulk updates or to administer a Subuser without changing the authentication in your code. You will use the parent account's API key when using this header."
+          }
+        ]
+      },
+      {
+        "id": "SendMail",
+        "method": "post",
+        "path": "/v3/mail/send",
+        "summary": "Submits an email for delivery through Twilio SendGrid. Provide `personalizations`, `from`, and message content, and use `template_id` when a stored template should supply the subject and content. A 202 response confirms that SendGrid accepted the message for processing.",
+        "description": "*The Mail Send operation allows you to send email over SendGrid's v3 Web API* For an overview of this API, including its features and limitations, please see the [Mail Send API overview page](https://www.twilio.com/docs/sendgrid/api-reference/mail-send) The overview page also includes links to SendGrid's Email API quickstarts and helper libraries to get you working with this endpoint even faster.",
+        "deprecated": false,
+        "deprecationMessage": null,
+        "parameters": [
+          {
+            "name": "Content-Encoding",
+            "in": "header",
+            "required": false,
+            "description": "Use this header when sending a gzip compressed mail body. Mail body compression is available to some high volume accounts. Submit a [request to support](https://support.sendgrid.com/hc/en-us) to have gzip enabled on your account."
+          }
+        ]
+      }
+    ],
+    "models": [
+      {
+        "name": "ContentEncoding",
+        "kind": "enum",
+        "description": "Typed representation of the `ContentEncoding` API schema.",
+        "values": [
+          "gzip"
+        ],
+        "properties": []
+      },
+      {
+        "name": "Disposition",
+        "kind": "enum",
+        "description": "Typed representation of the `Disposition` API schema.",
+        "values": [
+          "inline",
+          "attachment"
+        ],
+        "properties": []
+      },
+      {
+        "name": "ErrorResponse",
+        "kind": "model",
+        "description": "Typed representation of the `ErrorResponse` API schema.",
+        "values": [],
+        "properties": [
+          {
+            "name": "errors",
+            "description": "Optional array value serialized in the `errors` wire field."
+          },
+          {
+            "name": "id",
+            "description": "When applicable, this property value will be an error ID."
+          }
+        ]
+      },
+      {
+        "name": "MailBatchResponse",
+        "kind": "model",
+        "description": "Typed representation of the `MailBatchResponse` API schema.",
+        "values": [],
+        "properties": [
+          {
+            "name": "batch_id",
+            "description": "A mail batch ID."
+          }
+        ]
+      },
+      {
+        "name": "MailFrom",
+        "kind": "model",
+        "description": "Typed representation of the `MailFrom` API schema.",
+        "values": [],
+        "properties": [
+          {
+            "name": "email",
+            "description": "The email address from which messages are sent. This address should be a verified sender in your Twilio SendGrid account. Email addresses specified in `personalizations` will override addresses set at the message level outside of the `personalizations` object."
+          },
+          {
+            "name": "name",
+            "description": "A name or title associated with the email address such as \"Support\" or \"Alex\"."
+          }
+        ]
+      },
+      {
+        "name": "MailTo",
+        "kind": "model",
+        "description": "Typed representation of the `MailTo` API schema.",
+        "values": [],
+        "properties": [
+          {
+            "name": "email",
+            "description": "An email address to which a message is sent. Email addresses specified in `personalizations` will override addresses set at the message level outside of the `personalizations` object."
+          },
+          {
+            "name": "name",
+            "description": "A name or title associated with the email address such as \"Alex\"."
+          }
+        ]
+      }
+    ]
+  },
+  "transport": {
+    "engine": "net_http",
+    "implementation": "Net::HTTP"
+  }
+}

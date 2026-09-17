@@ -1,0 +1,695 @@
+[
+  {
+    "operationId": "CreateMailBatch",
+    "summary": "**This operation allows you to generate a new mail batch ID.**\n\n\nOnce a batch ID is created, you can associate it with a mail send by passing\nit in the request body of the [Mail Send operation](https://docs.sendgrid.com/api-reference/mail-send/mail-send).\nThis makes it possible to group multiple requests to the Mail Send operation\nby assigning them the same batch ID.\n\n\nA batch ID that's associated with a mail send can be used to access and modify the associated send. For example, you can pause or cancel a send using its batch ID. See the [Scheduled Sends API](https://www.twilio.com/docs/sendgrid/api-reference/cancel-scheduled-sends) for more information about pausing and cancelling a mail send.",
+    "method": "POST",
+    "pathTemplate": "/v3/mail/batch",
+    "regexSource": "^/v3/mail/batch$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [
+      {
+        "wireName": "on-behalf-of",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "example": "on-behalf-of"
+      }
+    ],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 11,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 0,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "201",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "batch_id": "123abc456def789hij0"
+        },
+        "bodyBase64": null,
+        "exampleSource": "authored",
+        "authoredExampleSource": "media-examples",
+        "hasAuthoredExample": true
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "invalid batch id",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "401": [
+        {
+          "statusCode": "401",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "authorization required",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "403": [
+        {
+          "statusCode": "403",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "access forbidden",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "batch id not found",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "405": [
+        {
+          "statusCode": "405",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "method not allowed",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "500": [
+        {
+          "statusCode": "500",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "internal server error",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "SendMail",
+    "summary": "Submits an email for delivery through Twilio SendGrid. Provide `personalizations`, `from`, and message content, and use `template_id` when a stored template should supply the subject and content. A 202 response confirms that SendGrid accepted the message for processing.",
+    "method": "POST",
+    "pathTemplate": "/v3/mail/send",
+    "regexSource": "^/v3/mail/send$",
+    "pathParams": [],
+    "pathParameters": [],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [
+      {
+        "wireName": "Content-Encoding",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "example": "gzip"
+      }
+    ],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 0,
+      "totalSegments": 3,
+      "staticCharacterCount": 10,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 2,
+    "requestModes": [
+      {
+        "mediaType": "application/json",
+        "encoderKind": "json",
+        "required": false,
+        "bodyShape": "fields",
+        "requiredFields": [
+          "personalizations",
+          "from"
+        ],
+        "fields": [
+          {
+            "wireName": "personalizations",
+            "repeated": true,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "from",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "reply_to",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "reply_to_list",
+            "repeated": true,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "subject",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "content",
+            "repeated": true,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "attachments",
+            "repeated": true,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "template_id",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "headers",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "categories",
+            "repeated": true,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "custom_args",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "send_at",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "batch_id",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "asm",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "ip_pool_name",
+            "repeated": false,
+            "partKind": "scalar",
+            "contentType": null
+          },
+          {
+            "wireName": "mail_settings",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          },
+          {
+            "wireName": "tracking_settings",
+            "repeated": false,
+            "partKind": "json",
+            "contentType": null
+          }
+        ],
+        "example": {
+          "personalizations": [
+            {
+              "to": [
+                {
+                  "email": "alex@example.com",
+                  "name": "Alex"
+                },
+                {
+                  "email": "bola@example.com",
+                  "name": "Bola"
+                }
+              ],
+              "dynamic_template_data": {
+                "subject": "Hello, Alex",
+                "customer_name": "Alex",
+                "confirmation_number": "123abc456def789hij0"
+              }
+            }
+          ],
+          "from": {
+            "email": "orders@example.com",
+            "name": "Example Order Confirmation"
+          },
+          "reply_to": {
+            "email": "customer_service@example.com",
+            "name": "Example Customer Service Team"
+          },
+          "attachments": [
+            {
+              "content": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KCiAgICA8aGVhZD4KICAgICAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+CiAgICAgICAgPG1ldGEgaHR0cC1lcXVpdj0iWC1VQS1Db21wYXRpYmxlIiBjb250ZW50PSJJRT1lZGdlIj4KICAgICAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgICAgICAgPHRpdGxlPkRvY3VtZW50PC90aXRsZT4KICAgIDwvaGVhZD4KCiAgICA8Ym9keT4KCiAgICA8L2JvZHk+Cgo8L2h0bWw+Cg==",
+              "filename": "index.html",
+              "type": "text/html",
+              "disposition": "attachment"
+            }
+          ],
+          "template_id": "d-123abc456def789hij0klm123nop456qrs789tuv0xyz",
+          "categories": [
+            "cake",
+            "pie",
+            "baking"
+          ],
+          "send_at": 1617260400,
+          "batch_id": "AsdFgHjklQweRTYuIopzXcVBNm0aSDfGHjklmZcVbNMqWert1znmOP2asDFjkl",
+          "asm": {
+            "group_id": 12345,
+            "groups_to_display": [
+              12345
+            ]
+          },
+          "ip_pool_name": "transactional email",
+          "mail_settings": {
+            "bypass_list_management": {
+              "enable": false
+            },
+            "footer": {
+              "enable": false
+            },
+            "sandbox_mode": {
+              "enable": false
+            }
+          },
+          "tracking_settings": {
+            "click_tracking": {
+              "enable": true,
+              "enable_text": false
+            },
+            "open_tracking": {
+              "enable": true,
+              "substitution_tag": "%open-track%"
+            },
+            "subscription_tracking": {
+              "enable": false
+            }
+          }
+        }
+      }
+    ],
+    "responseModes": [
+      {
+        "statusCode": "202",
+        "mediaType": null,
+        "decoderKind": "empty",
+        "example": null,
+        "bodyBase64": null,
+        "exampleSource": "synthesized",
+        "authoredExampleSource": "none",
+        "hasAuthoredExample": false
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "invalid request",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "401": [
+        {
+          "statusCode": "401",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "authorization required",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "403": [
+        {
+          "statusCode": "403",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "access forbidden",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "404": [
+        {
+          "statusCode": "404",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "not found",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "405": [
+        {
+          "statusCode": "405",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "method not allowed",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "413": [
+        {
+          "statusCode": "413",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "content too large",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "500": [
+        {
+          "statusCode": "500",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "internal server error"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ]
+    }
+  },
+  {
+    "operationId": "GetMailBatch",
+    "summary": "**This operation allows you to validate a mail batch ID.**\n\nIf you provide a valid batch ID, this operation will return a `200` status code and the batch ID itself.\nIf you provide an invalid batch ID, you will receive a `400` level status code and an error message.\nA batch ID does not need to be assigned to a send to be considered valid. A successful response means only that the batch ID has been created, but it does not indicate that the ID has been assigned to a send.",
+    "method": "GET",
+    "pathTemplate": "/v3/mail/batch/{batch_id}",
+    "regexSource": "^/v3/mail/batch/(?<sdkPath0>[^/]+)$",
+    "pathParams": [
+      "batch_id"
+    ],
+    "pathParameters": [
+      {
+        "wireName": "batch_id",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "example": "batch_-1",
+        "routeRepresentative": "sdk-route-1"
+      }
+    ],
+    "queryParameters": [],
+    "literalQuery": [],
+    "headerParameters": [
+      {
+        "wireName": "on-behalf-of",
+        "required": false,
+        "style": "simple",
+        "explode": false,
+        "allowReserved": false,
+        "isArray": false,
+        "example": "on-behalf-of"
+      }
+    ],
+    "specificity": {
+      "staticSegments": 3,
+      "parameterSegments": 1,
+      "totalSegments": 4,
+      "staticCharacterCount": 11,
+      "constrainedParameters": 0,
+      "literalQueryParameters": 0
+    },
+    "originalIndex": 1,
+    "requestModes": [],
+    "responseModes": [
+      {
+        "statusCode": "200",
+        "mediaType": "application/json",
+        "decoderKind": "json",
+        "example": {
+          "batch_id": "123abc456def789hij0"
+        },
+        "bodyBase64": null,
+        "exampleSource": "authored",
+        "authoredExampleSource": "media-examples",
+        "hasAuthoredExample": true
+      }
+    ],
+    "defaultResponseIndex": 0,
+    "streamSelector": null,
+    "errorResponses": {
+      "400": [
+        {
+          "statusCode": "400",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "invalid batch id",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "401": [
+        {
+          "statusCode": "401",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "authorization required",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "403": [
+        {
+          "statusCode": "403",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "access forbidden",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "405": [
+        {
+          "statusCode": "405",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "method not allowed",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ],
+      "500": [
+        {
+          "statusCode": "500",
+          "mediaType": "application/json",
+          "decoderKind": "json",
+          "example": {
+            "errors": [
+              {
+                "message": "internal server error",
+                "field": "null"
+              }
+            ]
+          },
+          "bodyBase64": null,
+          "exampleSource": "authored",
+          "authoredExampleSource": "media-examples",
+          "hasAuthoredExample": true
+        }
+      ]
+    }
+  }
+]

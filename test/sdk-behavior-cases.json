@@ -1,0 +1,711 @@
+{
+  "baseUrl": "https://behavior.test",
+  "operationCount": 3,
+  "credentials": {
+    "bearer": "behavior-bearer-token",
+    "apiKey": "behavior-api-key",
+    "basicUser": "behavior-user",
+    "basicPassword": "behavior-password",
+    "basicHeader": "Basic YmVoYXZpb3ItdXNlcjpiZWhhdmlvci1wYXNzd29yZA=="
+  },
+  "authHeaders": {},
+  "cases": [
+    {
+      "id": "behavior-1",
+      "operationId": "CreateMailBatch",
+      "kinds": [
+        "auth-application",
+        "error-response",
+        "header-serialization",
+        "json-response"
+      ],
+      "request": {
+        "method": "POST",
+        "pathTemplate": "/v3/mail/batch",
+        "pathParameters": {},
+        "query": [],
+        "headers": {
+          "on-behalf-of": "on-behalf-of"
+        },
+        "bodyKind": null,
+        "contentType": null,
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "expect": {
+        "method": "POST",
+        "path": "/v3/mail/batch",
+        "query": "",
+        "url": "https://behavior.test/v3/mail/batch",
+        "headers": {
+          "on-behalf-of": "on-behalf-of"
+        },
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"batch_id\":\"HkJ5yLYULb7Rj8GKSx7u025ouWVlMgAi\"}",
+        "value": {
+          "batch_id": "HkJ5yLYULb7Rj8GKSx7u025ouWVlMgAi"
+        }
+      }
+    },
+    {
+      "id": "behavior-2",
+      "operationId": "GetMailBatch",
+      "kinds": [
+        "auth-application",
+        "error-response",
+        "header-serialization",
+        "json-response",
+        "path-serialization"
+      ],
+      "request": {
+        "method": "GET",
+        "pathTemplate": "/v3/mail/batch/{batch_id}",
+        "pathParameters": {
+          "batch_id": "batch_-1"
+        },
+        "query": [],
+        "headers": {
+          "on-behalf-of": "on-behalf-of"
+        },
+        "bodyKind": null,
+        "contentType": null,
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "expect": {
+        "method": "GET",
+        "path": "/v3/mail/batch/batch_-1",
+        "query": "",
+        "url": "https://behavior.test/v3/mail/batch/batch_-1",
+        "headers": {
+          "on-behalf-of": "on-behalf-of"
+        },
+        "bodyText": null,
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"batch_id\":\"HkJ5yLYULb7Rj8GKSx7u025ouWVlMgAi\"}",
+        "value": {
+          "batch_id": "HkJ5yLYULb7Rj8GKSx7u025ouWVlMgAi"
+        }
+      }
+    },
+    {
+      "id": "behavior-3",
+      "operationId": "SendMail",
+      "kinds": [
+        "auth-application",
+        "empty-response",
+        "error-response",
+        "header-serialization",
+        "json-request"
+      ],
+      "request": {
+        "method": "POST",
+        "pathTemplate": "/v3/mail/send",
+        "pathParameters": {},
+        "query": [],
+        "headers": {
+          "content-encoding": "gzip"
+        },
+        "body": {
+          "personalizations": [
+            {
+              "from": {
+                "email": "user@example.com",
+                "name": "Example Name"
+              },
+              "to": [
+                {
+                  "email": "user@example.com",
+                  "name": "Example Name"
+                }
+              ],
+              "cc": [
+                {
+                  "email": "user@example.com",
+                  "name": "Example Name"
+                }
+              ],
+              "bcc": [
+                {
+                  "email": "user@example.com",
+                  "name": "Example Name"
+                }
+              ],
+              "subject": "x",
+              "headers": {},
+              "substitutions": {
+                "key": "key"
+              },
+              "dynamic_template_data": {},
+              "custom_args": {},
+              "send_at": 1
+            }
+          ],
+          "from": {
+            "email": "user@example.com",
+            "name": "Example Name"
+          },
+          "reply_to": {
+            "email": "user@example.com",
+            "name": "Example Name"
+          },
+          "reply_to_list": [
+            {
+              "email": "user@example.com",
+              "name": "Example Name"
+            }
+          ],
+          "subject": "x",
+          "content": [
+            {
+              "type": "x",
+              "value": "x"
+            }
+          ],
+          "attachments": [
+            {
+              "content": "x",
+              "type": "x",
+              "filename": "Example Name",
+              "disposition": "attachment",
+              "content_id": "content_-1"
+            }
+          ],
+          "template_id": "template_-1",
+          "headers": {},
+          "categories": [
+            "categories"
+          ],
+          "custom_args": "custom_args",
+          "send_at": 1,
+          "batch_id": "batch_-1",
+          "asm": {
+            "group_id": 1,
+            "groups_to_display": [
+              1
+            ]
+          },
+          "ip_pool_name": "Example Name",
+          "mail_settings": {
+            "bypass_list_management": {
+              "enable": false
+            },
+            "bypass_spam_management": {
+              "enable": false
+            },
+            "bypass_bounce_management": {
+              "enable": false
+            },
+            "bypass_unsubscribe_management": {
+              "enable": false
+            },
+            "footer": {
+              "enable": false,
+              "text": "text",
+              "html": "html"
+            },
+            "sandbox_mode": {
+              "enable": false
+            }
+          },
+          "tracking_settings": {
+            "click_tracking": {
+              "enable": false,
+              "enable_text": false
+            },
+            "open_tracking": {
+              "enable": false,
+              "substitution_tag": "substitution_tag"
+            },
+            "subscription_tracking": {
+              "enable": false,
+              "text": "text",
+              "html": "html",
+              "substitution_tag": "substitution_tag"
+            },
+            "ganalytics": {
+              "enable": false,
+              "utm_source": "utm_source",
+              "utm_medium": "utm_medium",
+              "utm_term": "utm_term",
+              "utm_content": "utm_content",
+              "utm_campaign": "utm_campaign"
+            }
+          }
+        },
+        "bodyKind": "json",
+        "contentType": "application/json",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ]
+      },
+      "expect": {
+        "method": "POST",
+        "path": "/v3/mail/send",
+        "query": "",
+        "url": "https://behavior.test/v3/mail/send",
+        "headers": {
+          "content-encoding": "gzip",
+          "content-type": "application/json"
+        },
+        "bodyText": "{\"personalizations\":[{\"from\":{\"email\":\"user@example.com\",\"name\":\"Example Name\"},\"to\":[{\"email\":\"user@example.com\",\"name\":\"Example Name\"}],\"cc\":[{\"email\":\"user@example.com\",\"name\":\"Example Name\"}],\"bcc\":[{\"email\":\"user@example.com\",\"name\":\"Example Name\"}],\"subject\":\"x\",\"headers\":{},\"substitutions\":{\"key\":\"key\"},\"dynamic_template_data\":{},\"custom_args\":{},\"send_at\":1}],\"from\":{\"email\":\"user@example.com\",\"name\":\"Example Name\"},\"reply_to\":{\"email\":\"user@example.com\",\"name\":\"Example Name\"},\"reply_to_list\":[{\"email\":\"user@example.com\",\"name\":\"Example Name\"}],\"subject\":\"x\",\"content\":[{\"type\":\"x\",\"value\":\"x\"}],\"attachments\":[{\"content\":\"x\",\"type\":\"x\",\"filename\":\"Example Name\",\"disposition\":\"attachment\",\"content_id\":\"content_-1\"}],\"template_id\":\"template_-1\",\"headers\":{},\"categories\":[\"categories\"],\"custom_args\":\"custom_args\",\"send_at\":1,\"batch_id\":\"batch_-1\",\"asm\":{\"group_id\":1,\"groups_to_display\":[1]},\"ip_pool_name\":\"Example Name\",\"mail_settings\":{\"bypass_list_management\":{\"enable\":false},\"bypass_spam_management\":{\"enable\":false},\"bypass_bounce_management\":{\"enable\":false},\"bypass_unsubscribe_management\":{\"enable\":false},\"footer\":{\"enable\":false,\"text\":\"text\",\"html\":\"html\"},\"sandbox_mode\":{\"enable\":false}},\"tracking_settings\":{\"click_tracking\":{\"enable\":false,\"enable_text\":false},\"open_tracking\":{\"enable\":false,\"substitution_tag\":\"substitution_tag\"},\"subscription_tracking\":{\"enable\":false,\"text\":\"text\",\"html\":\"html\",\"substitution_tag\":\"substitution_tag\"},\"ganalytics\":{\"enable\":false,\"utm_source\":\"utm_source\",\"utm_medium\":\"utm_medium\",\"utm_term\":\"utm_term\",\"utm_content\":\"utm_content\",\"utm_campaign\":\"utm_campaign\"}}}",
+        "multipartFields": null
+      },
+      "response": {
+        "kind": "empty",
+        "status": 204,
+        "mediaType": null,
+        "body": "",
+        "value": null
+      }
+    },
+    {
+      "id": "authored-CreateMailBatch-201-application/json",
+      "operationId": "CreateMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 201,
+        "mediaType": "application/json",
+        "body": "{\"batch_id\":\"123abc456def789hij0\"}",
+        "value": {
+          "batch_id": "123abc456def789hij0"
+        }
+      }
+    },
+    {
+      "id": "authored-CreateMailBatch-400-application/json",
+      "operationId": "CreateMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 400,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"invalid batch id\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "invalid batch id",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-CreateMailBatch-401-application/json",
+      "operationId": "CreateMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 401,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"authorization required\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "authorization required",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-CreateMailBatch-403-application/json",
+      "operationId": "CreateMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 403,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"access forbidden\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "access forbidden",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-CreateMailBatch-404-application/json",
+      "operationId": "CreateMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 404,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"batch id not found\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "batch id not found",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-CreateMailBatch-405-application/json",
+      "operationId": "CreateMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 405,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"method not allowed\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "method not allowed",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-CreateMailBatch-500-application/json",
+      "operationId": "CreateMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 500,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"internal server error\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "internal server error",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-GetMailBatch-200-application/json",
+      "operationId": "GetMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 200,
+        "mediaType": "application/json",
+        "body": "{\"batch_id\":\"123abc456def789hij0\"}",
+        "value": {
+          "batch_id": "123abc456def789hij0"
+        }
+      }
+    },
+    {
+      "id": "authored-GetMailBatch-400-application/json",
+      "operationId": "GetMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 400,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"invalid batch id\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "invalid batch id",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-GetMailBatch-401-application/json",
+      "operationId": "GetMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 401,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"authorization required\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "authorization required",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-GetMailBatch-403-application/json",
+      "operationId": "GetMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 403,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"access forbidden\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "access forbidden",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-GetMailBatch-405-application/json",
+      "operationId": "GetMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 405,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"method not allowed\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "method not allowed",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-GetMailBatch-500-application/json",
+      "operationId": "GetMailBatch",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 500,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"internal server error\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "internal server error",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-SendMail-400-application/json",
+      "operationId": "SendMail",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 400,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"invalid request\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "invalid request",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-SendMail-401-application/json",
+      "operationId": "SendMail",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 401,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"authorization required\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "authorization required",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-SendMail-403-application/json",
+      "operationId": "SendMail",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 403,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"access forbidden\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "access forbidden",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-SendMail-404-application/json",
+      "operationId": "SendMail",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 404,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"not found\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "not found",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-SendMail-405-application/json",
+      "operationId": "SendMail",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 405,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"method not allowed\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "method not allowed",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-SendMail-413-application/json",
+      "operationId": "SendMail",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 413,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"content too large\",\"field\":\"null\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "content too large",
+              "field": "null"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "authored-SendMail-500-application/json",
+      "operationId": "SendMail",
+      "kinds": [
+        "json-response"
+      ],
+      "request": null,
+      "response": {
+        "kind": "json",
+        "status": 500,
+        "mediaType": "application/json",
+        "body": "{\"errors\":[{\"message\":\"internal server error\"}]}",
+        "value": {
+          "errors": [
+            {
+              "message": "internal server error"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

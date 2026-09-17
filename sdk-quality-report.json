@@ -1,0 +1,112 @@
+{
+  "language": "ruby",
+  "operations": 3,
+  "operationCount": 3,
+  "operationIdentities": [
+    {
+      "publicOperationId": "createMailBatch",
+      "wireOperationId": "CreateMailBatch",
+      "method": "post",
+      "path": "/v3/mail/batch",
+      "mode": "normal",
+      "requestMediaType": null
+    },
+    {
+      "publicOperationId": "getMailBatch",
+      "wireOperationId": "GetMailBatch",
+      "method": "get",
+      "path": "/v3/mail/batch/{batch_id}",
+      "mode": "normal",
+      "requestMediaType": null
+    },
+    {
+      "publicOperationId": "sendMail",
+      "wireOperationId": "SendMail",
+      "method": "post",
+      "path": "/v3/mail/send",
+      "mode": "normal",
+      "requestMediaType": "application/json"
+    }
+  ],
+  "models": 6,
+  "modelCount": 6,
+  "sourceFiles": 13,
+  "testFiles": 4,
+  "sourceLines": 2565,
+  "averageSourceFileLines": 197.31,
+  "largestSourceFileLines": 802,
+  "largestNonExemptSourceFileLines": 802,
+  "sourceFileLineLimit": 1000,
+  "oversizedSourceFileExceptions": [],
+  "artifactBytes": 259065,
+  "generatedUnitTests": 5,
+  "nativeExecutableTests": 5,
+  "sharedTestCaseDefinitions": 23,
+  "generatedTestCaseDefinitions": 23,
+  "renderedBehaviorCases": 23,
+  "behaviorKindsDeclared": [
+    "auth-application",
+    "empty-response",
+    "error-response",
+    "header-serialization",
+    "json-request",
+    "json-response",
+    "path-serialization"
+  ],
+  "behaviorKindsExercised": [
+    "auth-application",
+    "empty-response",
+    "error-response",
+    "header-serialization",
+    "json-request",
+    "json-response",
+    "path-serialization"
+  ],
+  "nativeBehaviorCoverageComplete": true,
+  "apiManifestPresent": true,
+  "apiManifestMatchesSchema": true,
+  "enumStrategy": "open",
+  "authoredContractTests": 20,
+  "authoredContractResponseModes": 20,
+  "synthesizedMockRoutes": 1,
+  "shadowedMockRoutes": 0,
+  "publicSymbols": 16,
+  "documentedPublicSymbols": 16,
+  "authoredDocumentedPublicSymbols": 9,
+  "synthesizedDocumentedPublicSymbols": 7,
+  "documentationCoverage": 1,
+  "authoredDocumentationCoverage": 0.5625,
+  "nativeTestCountPassed": null,
+  "contractResponseModesPassed": null,
+  "formattingPassed": "pending",
+  "lintingPassed": "pending",
+  "compilationPassed": "pending",
+  "nativeTestsPassed": "pending",
+  "contractTestsPassed": "pending",
+  "packagePassed": "pending",
+  "consumerInstallPassed": "pending",
+  "pythonLintFix": null,
+  "pythonLint": null,
+  "warnings": [],
+  "blockingFailures": [],
+  "registryPackageBytes": null,
+  "deliveryReady": false,
+  "gateStates": {
+    "formatting": "pending",
+    "linting": "pending",
+    "compilation": "pending",
+    "nativeTests": "pending",
+    "contractTests": "pending",
+    "package": "pending",
+    "consumerInstall": "pending"
+  },
+  "releaseScorecard": {
+    "status": "pending",
+    "score": null,
+    "outOf": 10,
+    "releaseReady": false,
+    "blockers": [
+      "verification has not run"
+    ]
+  }
+}

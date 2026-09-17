@@ -1,0 +1,39 @@
+# Auto-generated SDK
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.0
+  SuggestExtensions: false
+
+Naming/MethodParameterName:
+  MinNameLength: 1
+Naming/VariableNumber:
+  AllowedPatterns: ['\A[a-zA-Z]+_[0-9]+\z']
+
+# Schema descriptions are copied verbatim into the generated documentation.
+Layout/LineLength:
+  Max: 2000
+  AllowedPatterns: ['\A\s*#']
+
+# Keyword arguments are the SDK's named-parameter surface, not a long
+# positional list, so they are not counted against this cop.
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+  Max: 20
+
+# Generated transport, operation, and replay code has a schema-sized
+# shape. These package-wide ceilings keep the metrics active while
+# leaving room for the largest supported generated fixture.
+Metrics/AbcSize:
+  Max: 70
+Metrics/BlockLength:
+  Max: 100
+Metrics/ClassLength:
+  Max: 12000
+Metrics/CyclomaticComplexity:
+  Max: 20
+Metrics/MethodLength:
+  Max: 100
+Metrics/ModuleLength:
+  Max: 6000
+Metrics/PerceivedComplexity:
+  Max: 25
